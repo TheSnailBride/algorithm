@@ -55,14 +55,21 @@ public class SampleController {
     @GetMapping("/ex5")
     public String ex5(RedirectAttributes redirectAttributes){
 
-        redirectAttributes.addAttribute("name", "ABC");
-        redirectAttributes.addFlashAttribute("result", "success");
+        redirectAttributes.addAttribute("name", "ABC"); //쿼리스트링 값
+        redirectAttributes.addFlashAttribute("result", "success"); //일회용
 
         return "redirect:ex6";
     }
 
     @GetMapping("/ex6")
     public void ex6(){
+
+    }
+
+    @GetMapping("/ex7")
+    public void ex7(String p1, int p2){
+        log.info("p1....."+p1);
+        log.info("p2....."+p2);
 
     }
 }
